@@ -1,9 +1,3 @@
-/* ==============================
-   AO COMMUNITY
-   PHASE 1
-================================ */
-
-
 * {
   margin: 0;
   padding: 0;
@@ -59,7 +53,6 @@ body {
 
 
 button {
-
   font-family: inherit;
 }
 
@@ -75,6 +68,184 @@ button {
   margin: auto;
 
   background: var(--background);
+}
+
+
+
+/* ==============================
+   AO SPLASH INTRO
+================================ */
+
+
+.ao-splash {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #080a0f;
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transition:
+    opacity 0.45s ease,
+    visibility 0.45s ease;
+}
+
+
+.ao-splash.splash-hide {
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+
+.splash-content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transform: translateY(-10px);
+}
+
+
+.splash-logo {
+
+  width: 92px;
+
+  height: 92px;
+
+  overflow: hidden;
+
+  border-radius: 25px;
+
+  opacity: 0;
+
+  transform: scale(0.86);
+
+  animation:
+    splashLogo 0.7s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+}
+
+
+.splash-logo img {
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+.splash-name {
+
+  margin-top: 20px;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  opacity: 0;
+
+  transform: translateY(7px);
+
+  animation:
+    splashText 0.45s ease
+    0.3s forwards;
+}
+
+
+.splash-community {
+
+  margin-top: 7px;
+
+  color: #666f80;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  opacity: 0;
+
+  animation:
+    splashText 0.45s ease
+    0.45s forwards;
+}
+
+
+@keyframes splashLogo {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+      scale(0.86);
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+      scale(1);
+  }
+
+}
+
+
+@keyframes splashText {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+      translateY(7px);
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
 }
 
 
@@ -129,12 +300,6 @@ button {
 
   gap: 11px;
 }
-
-
-
-/* ==============================
-   LOGO AO
-================================ */
 
 
 .ao-logo {
@@ -264,12 +429,6 @@ button {
 }
 
 
-
-/* ==============================
-   LOGO TREX
-================================ */
-
-
 .trex-logo {
 
   width: 90px;
@@ -306,12 +465,6 @@ button {
 }
 
 
-
-/* ==============================
-   COMMUNITY BADGE
-================================ */
-
-
 .community-badge {
 
   display: inline-block;
@@ -339,12 +492,6 @@ button {
 
   letter-spacing: 1px;
 }
-
-
-
-/* ==============================
-   HERO TEXT
-================================ */
 
 
 .hero h2 {
@@ -386,12 +533,6 @@ button {
 
   line-height: 1.6;
 }
-
-
-
-/* ==============================
-   MAIN BUTTON
-================================ */
 
 
 .main-button {
@@ -488,7 +629,7 @@ button {
 
 
 /* ==============================
-   ROOM LIST
+   ROOM
 ================================ */
 
 
@@ -633,7 +774,8 @@ button {
 
   bottom: 0;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
   z-index: 200;
 
@@ -715,14 +857,13 @@ button {
 
 
 /* ==============================
-   LARGER SCREEN
+   LARGE SCREEN
 ================================ */
 
 
 @media (min-width: 700px) {
 
   body {
-
     background: #040609;
   }
 
