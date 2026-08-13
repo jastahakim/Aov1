@@ -4,6 +4,72 @@ console.log(
 
 
 /* ==============================
+   AO SPLASH
+================================ */
+
+const aoSplash =
+  document.getElementById(
+    "aoSplash"
+  );
+
+
+const isStandalone =
+  window.matchMedia(
+    "(display-mode: standalone)"
+  ).matches ||
+  window.navigator.standalone === true;
+
+
+function closeSplash() {
+
+  if (!aoSplash) {
+    return;
+  }
+
+
+  aoSplash.classList.add(
+    "splash-hide"
+  );
+
+
+  setTimeout(
+    function () {
+
+      aoSplash.remove();
+
+    },
+    500
+  );
+
+}
+
+
+/*
+  Splash penuh hanya ketika
+  AO dibuka sebagai PWA.
+*/
+
+if (isStandalone) {
+
+  setTimeout(
+    closeSplash,
+    1200
+  );
+
+} else {
+
+  /*
+    Dalam browser biasa,
+    terus buka website.
+  */
+
+  closeSplash();
+
+}
+
+
+
+/* ==============================
    SERVICE WORKER
 ================================ */
 
@@ -59,17 +125,24 @@ const communitySection =
   );
 
 
-startButton.addEventListener(
-  "click",
-  function () {
+if (
+  startButton &&
+  communitySection
+) {
 
-    communitySection
-      .scrollIntoView({
-        behavior: "smooth"
-      });
+  startButton.addEventListener(
+    "click",
+    function () {
 
-  }
-);
+      communitySection
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+  );
+
+}
 
 
 
@@ -100,14 +173,6 @@ roomCards.forEach(
           "Ruang dipilih:",
           roomName
         );
-
-
-        /*
-          PHASE CHAT NANTI
-
-          Di sini kita akan
-          membuka ruang chat.
-        */
 
       }
     );
@@ -179,13 +244,17 @@ const notificationButton =
   );
 
 
-notificationButton.addEventListener(
-  "click",
-  function () {
+if (notificationButton) {
 
-    console.log(
-      "Notifikasi AO"
-    );
+  notificationButton.addEventListener(
+    "click",
+    function () {
 
-  }
-);
+      console.log(
+        "Notifikasi AO"
+      );
+
+    }
+  );
+
+}
