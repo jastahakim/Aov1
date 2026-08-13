@@ -1,5 +1,5 @@
 const CACHE_NAME =
-  "ao-community-v04";
+  "ao-community-v05";
 
 
 const FILES_TO_CACHE = [
