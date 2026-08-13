@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta name="theme-color" content="#080a0f">
+
+  <meta
+    name="description"
+    content="AO Community - Platform komuniti Trex Community"
+  >
+
+  <meta
+    name="application-name"
+    content="AO Community"
+  >
+
+  <meta
+    name="mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  >
+
+  <meta
+    name="apple-mobile-web-app-title"
+    content="AO"
+  >
+
+
+  <title>AO Community</title>
+
+
+  <!-- =========================
+       PWA MANIFEST
+  ========================== -->
+
+  <link
+    rel="manifest"
+    href="manifest.json"
+  >
+
+
+  <!-- =========================
+       AO ICON
+  ========================== -->
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="icon-192.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="icon-192.png"
+  >
+
+
+  <!-- =========================
+       CSS
+  ========================== -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header class="topbar">
+
+
+    <div class="brand">
+
+
+      <!-- AO LOGO -->
+
+      <div class="ao-logo">
+
+        <img
+          src="icon-192.png"
+          alt="Logo AO"
+        >
+
+      </div>
+
+
+      <!-- AO BRAND -->
+
+      <div class="brand-text">
+
+        <h1>
+          AO
+        </h1>
+
+        <span>
+          Trex Community
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- NOTIFICATION -->
+
+    <button
+      class="header-button"
+      id="notificationButton"
+      aria-label="Notifikasi"
+      type="button"
+    >
+
+      🔔
+
+    </button>
+
+
+  </header>
+
+
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
+  <main class="main-content">
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+
+      <!-- TREX LOGO -->
+
+      <div class="trex-logo">
+
+        <img
+          src="trex-logo.png"
+          alt="Logo Trex Community"
+        >
+
+      </div>
+
+
+
+      <!-- COMMUNITY BADGE -->
+
+      <div class="community-badge">
+
+        TREX COMMUNITY
+
+      </div>
+
+
+
+      <!-- TITLE -->
+
+      <h2>
+
+        Komuniti Blox Fruits
+
+        <span>
+          Trex Community
+        </span>
+
+      </h2>
+
+
+
+      <!-- DESCRIPTION -->
+
+      <p>
+
+        Berhubung bersama komuniti untuk
+        berbual, trading, raid, trial
+        dan Sea Event.
+
+      </p>
+
+
+
+      <!-- JOIN BUTTON -->
+
+      <button
+        class="main-button"
+        id="startButton"
+        type="button"
+      >
+
+        Masuk Komuniti
+
+      </button>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         COMMUNITY ROOMS
+    ========================== -->
+
+    <section
+      class="community-section"
+      id="communitySection"
+    >
+
+
+      <!-- SECTION HEADER -->
+
+      <div class="section-header">
+
+
+        <div>
+
+          <p class="section-label">
+            TREX
+          </p>
+
+          <h3>
+            Ruang Komuniti
+          </h3>
+
+        </div>
+
+
+        <span class="room-count">
+
+          6 ruang
+
+        </span>
+
+
+      </div>
+
+
+
+      <!-- =========================
+           ROOM LIST
+      ========================== -->
+
+      <div class="room-list">
+
+
+
+        <!-- =====================
+             PENGUMUMAN
+        ====================== -->
+
+        <button
+          class="room-card"
+          data-room="pengumuman"
+          type="button"
+        >
+
+
+          <div class="room-icon blue">
+
+            📢
+
+          </div>
+
+
+          <div class="room-content">
+
+            <strong>
+              Pengumuman
+            </strong>
+
+            <span>
+              Maklumat rasmi Trex Community
+            </span>
+
+          </div>
+
+
+          <div class="room-arrow">
+
+            ›
+
+          </div>
+
+
+        </button>
+
+
+
+        <!-- =====================
+             CHATTING
+        ====================== -->
+
+        <button
+          class="room-card"
+          data-room="chatting"
+          type="button"
+        >
+
+
+          <div class="room-icon">
+
+            💬
+
+          </div>
+
+
+          <div class="room-content">
+
+            <strong>
+              Chatting Blox Fruits
+            </strong>
+
+            <span>
+              Ruang sembang utama komuniti
+            </span>
+
+          </div>
+
+
+          <div class="room-arrow">
+
+            ›
+
+          </div>
+
+
+        </button>
+
+
+
+        <!-- =====================
+             SEA EVENT
+        ====================== -->
+
+        <button
+          class="room-card"
+          data-room="sea-event"
+          type="button"
+        >
+
+
+          <div class="room-icon">
+
+            🌊
+
+          </div>
+
+
+          <div class="room-content">
+
+            <strong>
+              Sea Event
+            </strong>
+
+            <span>
+              Cari ahli untuk Sea Event
+            </span>
+
+          </div>
+
+
+          <div class="room-arrow">
+
+            ›
+
+          </div>
+
+
+        </button>
+
+
+
+        <!-- =====================
+             TRADING
+        ====================== -->
+
+        <button
+          class="room-card"
+          data-room="trading"
+          type="button"
+        >
+
+
+          <div class="room-icon">
+
+            🔄
+
+          </div>
+
+
+          <div class="room-content">
+
+            <strong>
+              Trading
+            </strong>
+
+            <span>
+              Berbincang dan cari trade
+            </span>
+
+          </div>
+
+
+          <div class="room-arrow">
+
+            ›
+
+          </div>
+
+
+        </button>
+
+
+
+        <!-- =====================
+             RAID
+        ====================== -->
+
+        <button
+          class="room-card"
+          data-room="raid"
+          type="button"
+        >
+
+
+          <div class="room-icon">
+
+            ⚔️
+
+          </div>
+
+
+          <div class="room-content">
+
+            <strong>
+              Raid
+            </strong>
+
+            <span>
+              Cari pasukan untuk Raid
+            </span>
+
+          </div>
+
+
+          <div class="room-arrow">
+
+            ›
+
+          </div>
+
+
+        </button>
+
+
+
+        <!-- =====================
+             TRIAL
+        ====================== -->
+
+        <button
+          class="room-card"
+          data-room="trial"
+          type="button"
+        >
+
+
+          <div class="room-icon">
+
+            🏆
+
+          </div>
+
+
+          <div class="room-content">
+
+            <strong>
+              Trial
+            </strong>
+
+            <span>
+              Cari pemain untuk Trial
+            </span>
+
+          </div>
+
+
+          <div class="room-arrow">
+
+            ›
+
+          </div>
+
+
+        </button>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       BOTTOM NAVIGATION
+  ========================== -->
+
+  <nav class="bottom-nav">
+
+
+    <!-- HOME -->
+
+    <button
+      class="nav-button active"
+      data-page="utama"
+      type="button"
+    >
+
+      <span class="nav-icon">
+        ⌂
+      </span>
+
+      <span class="nav-text">
+        Utama
+      </span>
+
+    </button>
+
+
+
+    <!-- COMMUNITY -->
+
+    <button
+      class="nav-button"
+      data-page="komuniti"
+      type="button"
+    >
+
+      <span class="nav-icon">
+        💬
+      </span>
+
+      <span class="nav-text">
+        Komuniti
+      </span>
+
+    </button>
+
+
+
+    <!-- NOTIFICATION -->
+
+    <button
+      class="nav-button"
+      data-page="notifikasi"
+      type="button"
+    >
+
+      <span class="nav-icon">
+        🔔
+      </span>
+
+      <span class="nav-text">
+        Notifikasi
+      </span>
+
+    </button>
+
+
+
+    <!-- PROFILE -->
+
+    <button
+      class="nav-button"
+      data-page="profil"
+      type="button"
+    >
+
+      <span class="nav-icon">
+        ●
+      </span>
+
+      <span class="nav-text">
+        Profil
+      </span>
+
+    </button>
+
+
+  </nav>
+
+
+</div>
+
+
+
+<!-- =========================
+     FIREBASE
+========================== -->
+
+<script
+  type="module"
+  src="firebase.js"
+></script>
+
+
+
+<!-- =========================
+     AO APP
+========================== -->
+
+<script src="app.js"></script>
+
+
+</body>
+
+</html>
