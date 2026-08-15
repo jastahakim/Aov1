@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#080a0f"
+  >
+
+  <title>AO Control</title>
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="icon-192.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="admin.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<div
+  class="admin-app"
+  id="adminApp"
+>
+
+
+  <!-- HEADER -->
+
+  <header class="admin-header">
+
+    <button
+      class="back-button"
+      type="button"
+      onclick="window.location.href='index.html'"
+    >
+      ‹
+    </button>
+
+
+    <div class="admin-brand">
+
+      <img
+        src="icon-192.png"
+        alt="AO"
+      >
+
+      <div>
+
+        <strong>
+          AO Control
+        </strong>
+
+        <span>
+          Developer Console
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="developer-badge"
+      id="developerBadge"
+    >
+      DEV
+    </div>
+
+  </header>
+
+
+
+  <!-- CONTENT -->
+
+  <main class="admin-content">
+
+
+    <!-- WELCOME -->
+
+    <section class="welcome">
+
+      <p class="label">
+        ABSOLUTE ONE
+      </p>
+
+      <h1>
+        Pusat Kawalan
+      </h1>
+
+      <p id="developerInfo">
+        Memuatkan akaun developer...
+      </p>
+
+    </section>
+
+
+
+    <!-- STATS -->
+
+    <section class="stats-grid">
+
+
+      <div class="stat-card">
+
+        <span>
+          Jumlah Ahli
+        </span>
+
+        <strong id="totalUsers">
+          0
+        </strong>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <span>
+          Aktif
+        </span>
+
+        <strong id="activeUsers">
+          0
+        </strong>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <span>
+          Staff
+        </span>
+
+        <strong id="staffUsers">
+          0
+        </strong>
+
+      </div>
+
+
+      <div class="stat-card warning">
+
+        <span>
+          Disekat
+        </span>
+
+        <strong id="suspendedUsers">
+          0
+        </strong>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- QUICK ACTION -->
+
+    <section class="admin-section">
+
+      <div class="section-title">
+
+        <div>
+
+          <p class="label">
+            CONTROL
+          </p>
+
+          <h2>
+            Tindakan Pantas
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="action-grid">
+
+
+        <button
+          class="action-card"
+          data-action="announcement"
+        >
+
+          <span class="action-icon">
+            📢
+          </span>
+
+          <strong>
+            Pengumuman
+          </strong>
+
+          <small>
+            Hantar maklumat rasmi
+          </small>
+
+        </button>
+
+
+
+        <button
+          class="action-card"
+          data-action="push"
+        >
+
+          <span class="action-icon">
+            🔔
+          </span>
+
+          <strong>
+            Push Notification
+          </strong>
+
+          <small>
+            Hantar notifikasi
+          </small>
+
+        </button>
+
+
+
+        <button
+          class="action-card"
+          data-action="rooms"
+        >
+
+          <span class="action-icon">
+            💬
+          </span>
+
+          <strong>
+            Ruang
+          </strong>
+
+          <small>
+            Kawal ruang komuniti
+          </small>
+
+        </button>
+
+
+
+        <button
+          class="action-card"
+          data-action="app"
+        >
+
+          <span class="action-icon">
+            ⚙
+          </span>
+
+          <strong>
+            App Control
+          </strong>
+
+          <small>
+            Versi & maintenance
+          </small>
+
+        </button>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- MEMBERS -->
+
+    <section class="admin-section members-section">
+
+
+      <div class="section-title">
+
+        <div>
+
+          <p class="label">
+            USERS
+          </p>
+
+          <h2>
+            Pengurusan Ahli
+          </h2>
+
+        </div>
+
+
+        <button
+          class="refresh-button"
+          id="refreshUsers"
+          type="button"
+        >
+          ↻
+        </button>
+
+      </div>
+
+
+      <div class="search-box">
+
+        <span>
+          🔎
+        </span>
+
+        <input
+          type="search"
+          id="userSearch"
+          placeholder="Cari username atau AO ID"
+        >
+
+      </div>
+
+
+      <div
+        class="user-list"
+        id="userList"
+      >
+
+        <div class="loading">
+          Memuatkan ahli...
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+</div>
+
+
+
+<script
+  type="module"
+  src="admin.js"
+></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta name="theme-color" content="#080a0f">
+
+  <title>AO Account</title>
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="icon-192.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="auth.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<div class="auth-app">
+
+
+  <!-- BRAND -->
+
+  <div class="auth-brand">
+
+    <img
+      src="icon-192.png"
+      alt="AO"
+    >
+
+    <div>
+      <h1>AO</h1>
+      <span>Trex Community</span>
+    </div>
+
+  </div>
+
+
+
+  <!-- LOGIN -->
+
+  <section
+    class="auth-card"
+    id="loginPanel"
+  >
+
+    <div class="auth-heading">
+
+      <span class="mini-label">
+        AO ACCOUNT
+      </span>
+
+      <h2>
+        Selamat kembali
+      </h2>
+
+      <p>
+        Log masuk untuk masuk ke
+        Trex Community.
+      </p>
+
+    </div>
+
+
+    <form id="loginForm">
+
+
+      <div class="field">
+
+        <label for="loginUsername">
+          Nama Pengguna
+        </label>
+
+        <input
+          id="loginUsername"
+          type="text"
+          placeholder="Contoh: TrexKing"
+          autocomplete="username"
+          maxlength="20"
+          required
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="loginPassword">
+          Kata Laluan
+        </label>
+
+        <div class="password-field">
+
+          <input
+            id="loginPassword"
+            type="password"
+            placeholder="Masukkan kata laluan"
+            autocomplete="current-password"
+            required
+          >
+
+          <button
+            type="button"
+            class="show-password"
+            data-target="loginPassword"
+          >
+            Lihat
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="message"
+        id="loginMessage"
+      ></div>
+
+
+      <button
+        class="primary-button"
+        type="submit"
+        id="loginButton"
+      >
+        Log Masuk
+      </button>
+
+
+    </form>
+
+
+    <div class="auth-switch">
+
+      Belum mempunyai akaun?
+
+      <button
+        type="button"
+        id="showRegister"
+      >
+        Daftar
+      </button>
+
+    </div>
+
+
+    <button
+      class="forgot-button"
+      id="forgotPasswordButton"
+      type="button"
+    >
+      Lupa kata laluan?
+    </button>
+
+
+  </section>
+
+
+
+  <!-- REGISTER -->
+
+  <section
+    class="auth-card hidden"
+    id="registerPanel"
+  >
+
+    <div class="auth-heading">
+
+      <span class="mini-label">
+        TREX COMMUNITY
+      </span>
+
+      <h2>
+        Cipta akaun AO
+      </h2>
+
+      <p>
+        Anda tidak memerlukan
+        alamat email.
+      </p>
+
+    </div>
+
+
+    <form id="registerForm">
+
+
+      <div class="field">
+
+        <label for="registerUsername">
+          Nama Pengguna
+        </label>
+
+        <input
+          id="registerUsername"
+          type="text"
+          placeholder="Contoh: TrexKing"
+          autocomplete="username"
+          maxlength="20"
+          required
+        >
+
+        <small>
+          3 hingga 20 aksara.
+          Huruf, nombor dan _ sahaja.
+        </small>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="registerPassword">
+          Kata Laluan
+        </label>
+
+        <div class="password-field">
+
+          <input
+            id="registerPassword"
+            type="password"
+            placeholder="Minimum 8 aksara"
+            autocomplete="new-password"
+            required
+          >
+
+          <button
+            type="button"
+            class="show-password"
+            data-target="registerPassword"
+          >
+            Lihat
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="confirmPassword">
+          Sahkan Kata Laluan
+        </label>
+
+        <input
+          id="confirmPassword"
+          type="password"
+          placeholder="Masukkan sekali lagi"
+          autocomplete="new-password"
+          required
+        >
+
+      </div>
+
+
+      <div
+        class="message"
+        id="registerMessage"
+      ></div>
+
+
+      <button
+        class="primary-button"
+        type="submit"
+        id="registerButton"
+      >
+        Daftar Akaun
+      </button>
+
+
+    </form>
+
+
+    <div class="auth-switch">
+
+      Sudah mempunyai akaun?
+
+      <button
+        type="button"
+        id="showLogin"
+      >
+        Log Masuk
+      </button>
+
+    </div>
+
+
+  </section>
+
+
+  <div class="auth-footer">
+    Absolute One • Trex Community
+  </div>
+
+
+</div>
+
+
+<script
+  type="module"
+  src="auth.js"
+></script>
+
+
+</body>
+
+</html>

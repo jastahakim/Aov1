@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#080a0f"
+  >
+
+  <title>Pengumuman • AO</title>
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="icon-192.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="announcement.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<div
+  class="announcement-app"
+  id="announcementApp"
+>
+
+
+  <!-- HEADER -->
+
+  <header class="topbar">
+
+
+    <button
+      class="back-button"
+      id="backButton"
+      type="button"
+    >
+      ‹
+    </button>
+
+
+    <div class="header-title">
+
+      <div class="header-icon">
+        📢
+      </div>
+
+      <div>
+
+        <strong>
+          Pengumuman
+        </strong>
+
+        <span>
+          Trex Community
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="dev-badge"
+      id="devBadge"
+      hidden
+    >
+      DEV
+    </div>
+
+
+  </header>
+
+
+
+  <!-- CONTENT -->
+
+  <main class="content">
+
+
+    <section class="intro">
+
+      <p class="label">
+        TREX COMMUNITY
+      </p>
+
+      <h1>
+        Pengumuman
+      </h1>
+
+      <p>
+        Maklumat dan kemas kini rasmi
+        daripada Trex Community.
+      </p>
+
+    </section>
+
+
+
+    <!-- DEVELOPER PUBLISH -->
+
+    <section
+      class="publish-card"
+      id="publishCard"
+      hidden
+    >
+
+      <div class="publish-title">
+
+        <div>
+
+          <p class="label">
+            DEVELOPER
+          </p>
+
+          <h2>
+            Buat Pengumuman
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <form id="announcementForm">
+
+
+        <div class="field">
+
+          <label for="announcementTitle">
+            Tajuk
+          </label>
+
+          <input
+            id="announcementTitle"
+            type="text"
+            maxlength="80"
+            placeholder="Contoh: Raid malam ini"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="announcementMessage">
+            Mesej
+          </label>
+
+          <textarea
+            id="announcementMessage"
+            maxlength="1000"
+            placeholder="Tulis pengumuman..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <label class="important-option">
+
+          <input
+            id="announcementImportant"
+            type="checkbox"
+          >
+
+          <span>
+            Tandakan sebagai penting
+          </span>
+
+        </label>
+
+
+        <div
+          class="form-message"
+          id="formMessage"
+        ></div>
+
+
+        <button
+          class="publish-button"
+          id="publishButton"
+          type="submit"
+        >
+          Terbitkan Pengumuman
+        </button>
+
+
+      </form>
+
+    </section>
+
+
+
+    <!-- LIST -->
+
+    <section class="announcement-section">
+
+
+      <div class="section-header">
+
+        <div>
+
+          <p class="label">
+            TERKINI
+          </p>
+
+          <h2>
+            Semua Pengumuman
+          </h2>
+
+        </div>
+
+
+        <button
+          class="refresh-button"
+          id="refreshButton"
+          type="button"
+          aria-label="Refresh"
+        >
+          ↻
+        </button>
+
+      </div>
+
+
+      <div
+        class="announcement-list"
+        id="announcementList"
+      >
+
+        <div class="loading">
+          Memuatkan pengumuman...
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+</div>
+
+
+<script
+  type="module"
+  src="announcement.js"
+></script>
+
+
+</body>
+
+</html>
