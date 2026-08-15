@@ -1,16 +1,14 @@
-console.log(
-  "AO Community V0.1"
-);
+// @ts-nocheck
+
+console.log("AO Community");
 
 
 /* ==============================
-   AO SPLASH
+   AO SPLASH INTRO
 ================================ */
 
 const aoSplash =
-  document.getElementById(
-    "aoSplash"
-  );
+  document.getElementById("aoSplash");
 
 
 const isStandalone =
@@ -26,11 +24,9 @@ function closeSplash() {
     return;
   }
 
-
   aoSplash.classList.add(
     "splash-hide"
   );
-
 
   setTimeout(
     function () {
@@ -45,8 +41,8 @@ function closeSplash() {
 
 
 /*
-  Splash penuh hanya ketika
-  AO dibuka sebagai PWA.
+  Dalam PWA:
+  tunjuk intro AO.
 */
 
 if (isStandalone) {
@@ -59,8 +55,8 @@ if (isStandalone) {
 } else {
 
   /*
-    Dalam browser biasa,
-    terus buka website.
+    Browser biasa:
+    terus masuk AO.
   */
 
   closeSplash();
@@ -71,39 +67,125 @@ if (isStandalone) {
 
 /* ==============================
    SERVICE WORKER
+   + AUTO UPDATE
 ================================ */
 
-if (
-  "serviceWorker" in navigator
-) {
+if ("serviceWorker" in navigator) {
+
+  /*
+    Kalau PWA sudah mempunyai
+    service worker aktif.
+  */
+
+  const alreadyControlled =
+    Boolean(
+      navigator.serviceWorker.controller
+    );
+
 
   window.addEventListener(
     "load",
-    function () {
+    async function () {
 
-      navigator
-        .serviceWorker
-        .register("sw.js")
+      try {
 
-        .then(function () {
+        const registration =
+          await navigator
+            .serviceWorker
+            .register(
+              "sw.js",
+              {
+                /*
+                  Jangan gunakan
+                  HTTP cache untuk
+                  semakan sw.js.
+                */
+
+                updateViaCache:
+                  "none"
+              }
+            );
+
+
+        console.log(
+          "AO Service Worker aktif"
+        );
+
+
+        /*
+          Paksa browser semak
+          sama ada sw.js terbaru
+          tersedia.
+        */
+
+        try {
+
+          await registration.update();
 
           console.log(
-            "AO PWA aktif"
+            "AO semakan update selesai"
           );
 
-        })
+        } catch (updateError) {
 
-        .catch(function (error) {
-
-          console.error(
-            "Service Worker gagal:",
-            error
+          console.warn(
+            "AO update check gagal:",
+            updateError
           );
 
-        });
+        }
+
+
+      } catch (error) {
+
+        console.error(
+          "AO Service Worker Error:",
+          error
+        );
+
+      }
 
     }
   );
+
+
+  /*
+    Bila SW baru berjaya
+    mengambil alih PWA,
+    reload satu kali supaya
+    code terbaru digunakan.
+  */
+
+  if (alreadyControlled) {
+
+    let reloading = false;
+
+
+    navigator
+      .serviceWorker
+      .addEventListener(
+        "controllerchange",
+        function () {
+
+          if (reloading) {
+            return;
+          }
+
+
+          reloading = true;
+
+
+          console.log(
+            "AO versi baru aktif"
+          );
+
+
+          window.location.reload();
+
+        }
+      );
+
+  }
 
 }
 
@@ -147,7 +229,7 @@ if (
 
 
 /* ==============================
-   ROOM
+   COMMUNITY ROOMS
 ================================ */
 
 const roomCards =
@@ -174,6 +256,113 @@ roomCards.forEach(
           roomName
         );
 
+
+        /* ==========================
+           PENGUMUMAN
+        ========================== */
+
+        if (
+          roomName ===
+          "pengumuman"
+        ) {
+
+          window.location.href =
+            "announcement.html";
+
+          return;
+
+        }
+
+
+        /* ==========================
+           CHATTING
+        ========================== */
+
+        if (
+          roomName ===
+          "chatting"
+        ) {
+
+          console.log(
+            "Chatting Blox Fruits belum aktif."
+          );
+
+          return;
+
+        }
+
+
+        /* ==========================
+           SEA EVENT
+        ========================== */
+
+        if (
+          roomName ===
+          "sea-event"
+        ) {
+
+          console.log(
+            "Sea Event belum aktif."
+          );
+
+          return;
+
+        }
+
+
+        /* ==========================
+           TRADING
+        ========================== */
+
+        if (
+          roomName ===
+          "trading"
+        ) {
+
+          console.log(
+            "Trading belum aktif."
+          );
+
+          return;
+
+        }
+
+
+        /* ==========================
+           RAID
+        ========================== */
+
+        if (
+          roomName ===
+          "raid"
+        ) {
+
+          console.log(
+            "Raid belum aktif."
+          );
+
+          return;
+
+        }
+
+
+        /* ==========================
+           TRIAL
+        ========================== */
+
+        if (
+          roomName ===
+          "trial"
+        ) {
+
+          console.log(
+            "Trial belum aktif."
+          );
+
+          return;
+
+        }
+
       }
     );
 
@@ -183,7 +372,7 @@ roomCards.forEach(
 
 
 /* ==============================
-   NAVIGATION
+   BOTTOM NAVIGATION
 ================================ */
 
 const navButtons =
@@ -199,6 +388,16 @@ navButtons.forEach(
       "click",
       function () {
 
+        const page =
+          button.getAttribute(
+            "data-page"
+          );
+
+
+        /*
+          Buang active lama.
+        */
+
         navButtons.forEach(
           function (nav) {
 
@@ -210,21 +409,107 @@ navButtons.forEach(
         );
 
 
+        /*
+          Active baru.
+        */
+
         button.classList.add(
           "active"
         );
 
 
-        const page =
-          button.getAttribute(
-            "data-page"
+        console.log(
+          "AO Page:",
+          page
+        );
+
+
+        /* ==========================
+           UTAMA
+        ========================== */
+
+        if (
+          page === "utama"
+        ) {
+
+          const mainContent =
+            document.querySelector(
+              ".main-content"
+            );
+
+
+          if (mainContent) {
+
+            mainContent.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+
+          }
+
+
+          return;
+
+        }
+
+
+        /* ==========================
+           KOMUNITI
+        ========================== */
+
+        if (
+          page === "komuniti"
+        ) {
+
+          if (communitySection) {
+
+            communitySection
+              .scrollIntoView({
+                behavior: "smooth"
+              });
+
+          }
+
+
+          return;
+
+        }
+
+
+        /* ==========================
+           NOTIFIKASI
+        ========================== */
+
+        if (
+          page === "notifikasi"
+        ) {
+
+          console.log(
+            "Halaman Notifikasi belum aktif."
           );
 
 
-        console.log(
-          "Halaman:",
-          page
-        );
+          return;
+
+        }
+
+
+        /* ==========================
+           PROFIL
+        ========================== */
+
+        if (
+          page === "profil"
+        ) {
+
+          console.log(
+            "Profil AO akan dibina dalam Phase 2."
+          );
+
+
+          return;
+
+        }
 
       }
     );
@@ -235,7 +520,7 @@ navButtons.forEach(
 
 
 /* ==============================
-   NOTIFICATION
+   HEADER NOTIFICATION
 ================================ */
 
 const notificationButton =
@@ -251,7 +536,7 @@ if (notificationButton) {
     function () {
 
       console.log(
-        "Notifikasi AO"
+        "AO Notifications"
       );
 
     }
