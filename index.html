@@ -10,7 +10,10 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
-  <meta name="theme-color" content="#080a0f">
+  <meta
+    name="theme-color"
+    content="#080a0f"
+  >
 
   <meta
     name="description"
@@ -83,7 +86,7 @@
 
 
 <!-- =========================
-     AO SPLASH INTRO
+     AO SPLASH
 ========================== -->
 
 <div
@@ -92,6 +95,7 @@
 >
 
   <div class="splash-content">
+
 
     <div class="splash-logo">
 
@@ -102,13 +106,16 @@
 
     </div>
 
+
     <div class="splash-name">
       ABSOLUTE ONE
     </div>
 
+
     <div class="splash-community">
       TREX COMMUNITY
     </div>
+
 
   </div>
 
@@ -123,10 +130,14 @@
 <div class="app">
 
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="topbar">
 
+
+    <!-- BRAND -->
 
     <div class="brand">
 
@@ -157,29 +168,64 @@
     </div>
 
 
-    <button
-      class="header-button"
-      id="notificationButton"
-      aria-label="Notifikasi"
-      type="button"
-    >
-      🔔
-    </button>
+
+    <!-- HEADER ACTIONS -->
+
+    <div class="header-actions">
+
+
+      <!--
+        Hanya muncul kepada
+        akaun role developer.
+      -->
+
+      <button
+        class="control-button"
+        id="aoControlButton"
+        type="button"
+        aria-label="AO Control"
+        onclick="window.location.href='admin.html'"
+        hidden
+      >
+        ⚙
+      </button>
+
+
+
+      <!-- NOTIFICATION -->
+
+      <button
+        class="header-button"
+        id="notificationButton"
+        type="button"
+        aria-label="Notifikasi"
+      >
+        🔔
+      </button>
+
+
+    </div>
 
 
   </header>
 
 
 
-  <!-- MAIN -->
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
 
   <main class="main-content">
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section class="hero">
 
+
+      <!-- TREX LOGO -->
 
       <div class="trex-logo">
 
@@ -191,10 +237,18 @@
       </div>
 
 
+
+      <!-- BADGE -->
+
       <div class="community-badge">
+
         TREX COMMUNITY
+
       </div>
 
+
+
+      <!-- TITLE -->
 
       <h2>
 
@@ -207,6 +261,9 @@
       </h2>
 
 
+
+      <!-- DESCRIPTION -->
+
       <p>
 
         Berhubung bersama komuniti untuk
@@ -215,6 +272,9 @@
 
       </p>
 
+
+
+      <!-- ENTER COMMUNITY -->
 
       <button
         class="main-button"
@@ -231,7 +291,9 @@
 
 
 
-    <!-- COMMUNITY -->
+    <!-- =========================
+         COMMUNITY ROOMS
+    ========================== -->
 
     <section
       class="community-section"
@@ -248,6 +310,7 @@
             TREX
           </p>
 
+
           <h3>
             Ruang Komuniti
           </h3>
@@ -256,7 +319,9 @@
 
 
         <span class="room-count">
+
           6 ruang
+
         </span>
 
 
@@ -264,7 +329,10 @@
 
 
 
+      <!-- ROOM LIST -->
+
       <div class="room-list">
+
 
 
         <!-- PENGUMUMAN -->
@@ -279,6 +347,7 @@
             📢
           </div>
 
+
           <div class="room-content">
 
             <strong>
@@ -290,6 +359,7 @@
             </span>
 
           </div>
+
 
           <div class="room-arrow">
             ›
@@ -311,6 +381,7 @@
             💬
           </div>
 
+
           <div class="room-content">
 
             <strong>
@@ -322,6 +393,7 @@
             </span>
 
           </div>
+
 
           <div class="room-arrow">
             ›
@@ -343,6 +415,7 @@
             🌊
           </div>
 
+
           <div class="room-content">
 
             <strong>
@@ -354,6 +427,7 @@
             </span>
 
           </div>
+
 
           <div class="room-arrow">
             ›
@@ -375,6 +449,7 @@
             🔄
           </div>
 
+
           <div class="room-content">
 
             <strong>
@@ -386,6 +461,7 @@
             </span>
 
           </div>
+
 
           <div class="room-arrow">
             ›
@@ -407,6 +483,7 @@
             ⚔️
           </div>
 
+
           <div class="room-content">
 
             <strong>
@@ -418,6 +495,7 @@
             </span>
 
           </div>
+
 
           <div class="room-arrow">
             ›
@@ -439,6 +517,7 @@
             🏆
           </div>
 
+
           <div class="room-content">
 
             <strong>
@@ -450,6 +529,7 @@
             </span>
 
           </div>
+
 
           <div class="room-arrow">
             ›
@@ -468,10 +548,14 @@
 
 
 
-  <!-- BOTTOM NAVIGATION -->
+  <!-- =========================
+       BOTTOM NAVIGATION
+  ========================== -->
 
   <nav class="bottom-nav">
 
+
+    <!-- HOME -->
 
     <button
       class="nav-button active"
@@ -490,6 +574,9 @@
     </button>
 
 
+
+    <!-- COMMUNITY -->
+
     <button
       class="nav-button"
       data-page="komuniti"
@@ -507,6 +594,9 @@
     </button>
 
 
+
+    <!-- NOTIFICATION -->
+
     <button
       class="nav-button"
       data-page="notifikasi"
@@ -523,6 +613,9 @@
 
     </button>
 
+
+
+    <!-- PROFILE -->
 
     <button
       class="nav-button"
@@ -548,7 +641,9 @@
 
 
 
-<!-- FIREBASE -->
+<!-- =========================
+     FIREBASE
+========================== -->
 
 <script
   type="module"
@@ -556,9 +651,25 @@
 ></script>
 
 
-<!-- AO APP -->
 
-<script src="app.js"></script>
+<!-- =========================
+     AO SESSION
+========================== -->
+
+<script
+  type="module"
+  src="session.js"
+></script>
+
+
+
+<!-- =========================
+     AO APP
+========================== -->
+
+<script
+  src="app.js"
+></script>
 
 
 </body>
