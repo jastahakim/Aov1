@@ -1,8 +1,17 @@
+/* ==============================
+   AO COMMUNITY
+================================ */
+
+
 * {
+
   margin: 0;
+
   padding: 0;
+
   box-sizing: border-box;
 }
+
 
 
 :root {
@@ -23,6 +32,10 @@
 
   --blue-light: #55a8ff;
 
+  --danger: #ff5b69;
+
+  --success: #49d889;
+
   --header-height: 70px;
 
   --navigation-height: 72px;
@@ -34,18 +47,23 @@
    ROOT
 ================================ */
 
+
 html {
 
   width: 100%;
 
   height: 100%;
 
-  background: var(--background);
+  background:
+    var(--background);
 
-  scroll-behavior: smooth;
+  scroll-behavior:
+    smooth;
 
-  overscroll-behavior: none;
+  overscroll-behavior:
+    none;
 }
+
 
 
 body {
@@ -58,24 +76,44 @@ body {
 
   overflow: hidden;
 
-  background: var(--background);
+  background:
+    var(--background);
 
-  color: var(--text);
+  color:
+    var(--text);
 
   font-family:
     Arial,
     Helvetica,
     sans-serif;
 
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color:
+    transparent;
 
-  overscroll-behavior: none;
+  overscroll-behavior:
+    none;
 }
+
 
 
 button {
 
-  font-family: inherit;
+  font-family:
+    inherit;
+
+  user-select:
+    none;
+}
+
+
+
+img {
+
+  user-select:
+    none;
+
+  -webkit-user-drag:
+    none;
 }
 
 
@@ -83,6 +121,7 @@ button {
 /* ==============================
    APP SHELL
 ================================ */
+
 
 .app {
 
@@ -100,14 +139,16 @@ button {
 
   overflow: hidden;
 
-  background: var(--background);
+  background:
+    var(--background);
 }
 
 
 
 /* ==============================
-   AO SPLASH INTRO
+   AO SPLASH
 ================================ */
+
 
 .ao-splash {
 
@@ -123,7 +164,8 @@ button {
 
   justify-content: center;
 
-  background: #080a0f;
+  background:
+    var(--background);
 
   opacity: 1;
 
@@ -135,6 +177,7 @@ button {
 }
 
 
+
 .ao-splash.splash-hide {
 
   opacity: 0;
@@ -143,6 +186,7 @@ button {
 
   pointer-events: none;
 }
+
 
 
 .splash-content {
@@ -158,6 +202,7 @@ button {
   transform:
     translateY(-10px);
 }
+
 
 
 .splash-logo {
@@ -188,6 +233,7 @@ button {
 }
 
 
+
 .splash-logo img {
 
   width: 100%;
@@ -198,6 +244,7 @@ button {
 
   object-fit: cover;
 }
+
 
 
 .splash-name {
@@ -226,6 +273,7 @@ button {
 }
 
 
+
 .splash-community {
 
   margin-top: 7px;
@@ -249,6 +297,7 @@ button {
 }
 
 
+
 @keyframes splashLogo {
 
   0% {
@@ -269,6 +318,7 @@ button {
   }
 
 }
+
 
 
 @keyframes splashText {
@@ -298,6 +348,7 @@ button {
    HEADER
 ================================ */
 
+
 .topbar {
 
   position: relative;
@@ -309,13 +360,14 @@ button {
   height:
     var(--header-height);
 
-  flex-shrink: 0;
-
   display: flex;
 
   align-items: center;
 
-  justify-content: space-between;
+  justify-content:
+    space-between;
+
+  flex-shrink: 0;
 
   padding-left: 18px;
 
@@ -341,6 +393,12 @@ button {
 }
 
 
+
+/* ==============================
+   BRAND
+================================ */
+
+
 .brand {
 
   display: flex;
@@ -348,13 +406,11 @@ button {
   align-items: center;
 
   gap: 11px;
+
+  min-width: 0;
 }
 
 
-
-/* ==============================
-   LOGO AO
-================================ */
 
 .ao-logo {
 
@@ -364,9 +420,9 @@ button {
 
   flex-shrink: 0;
 
-  border-radius: 13px;
-
   overflow: hidden;
+
+  border-radius: 13px;
 
   background: #000;
 
@@ -374,6 +430,7 @@ button {
     1px solid
     var(--border);
 }
+
 
 
 .ao-logo img {
@@ -388,7 +445,10 @@ button {
 }
 
 
+
 .brand-text {
+
+  min-width: 0;
 
   display: flex;
 
@@ -400,9 +460,11 @@ button {
 }
 
 
+
 .brand-text h1 {
 
-  color: var(--text);
+  color:
+    var(--text);
 
   font-size: 18px;
 
@@ -412,12 +474,111 @@ button {
 }
 
 
+
 .brand-text span {
 
-  color: var(--muted);
+  color:
+    var(--muted);
 
   font-size: 11px;
+
+  white-space: nowrap;
 }
+
+
+
+/* ==============================
+   HEADER ACTIONS
+================================ */
+
+
+.header-actions {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+
+
+/* AO CONTROL */
+
+
+.control-button {
+
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(
+      85,
+      168,
+      255,
+      0.28
+    );
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      37,
+      136,
+      255,
+      0.12
+    );
+
+  color:
+    var(--blue-light);
+
+  font-size: 19px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.12s ease,
+    background 0.15s ease;
+}
+
+
+
+.control-button[hidden] {
+
+  display: none !important;
+}
+
+
+
+.control-button:active {
+
+  transform:
+    scale(0.94);
+
+  background:
+    rgba(
+      37,
+      136,
+      255,
+      0.22
+    );
+}
+
+
+
+/* NOTIFICATION */
 
 
 .header-button {
@@ -450,6 +611,7 @@ button {
 }
 
 
+
 .header-button:active {
 
   transform:
@@ -461,6 +623,7 @@ button {
 /* ==============================
    MAIN SCROLL AREA
 ================================ */
+
 
 .main-content {
 
@@ -488,14 +651,19 @@ button {
       + 25px
     );
 
-  overscroll-behavior-y: none;
+  overscroll-behavior-y:
+    none;
 
-  overscroll-behavior-x: none;
+  overscroll-behavior-x:
+    none;
 
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling:
+    touch;
 
-  scrollbar-width: none;
+  scrollbar-width:
+    none;
 }
+
 
 
 .main-content::-webkit-scrollbar {
@@ -508,6 +676,7 @@ button {
 /* ==============================
    HERO
 ================================ */
+
 
 .hero {
 
@@ -525,6 +694,7 @@ button {
    TREX LOGO
 ================================ */
 
+
 .trex-logo {
 
   width: 90px;
@@ -534,9 +704,9 @@ button {
   margin:
     0 auto 20px;
 
-  border-radius: 24px;
-
   overflow: hidden;
+
+  border-radius: 24px;
 
   background:
     var(--surface);
@@ -546,7 +716,9 @@ button {
     var(--border);
 
   box-shadow:
-    0 10px 35px
+    0
+    10px
+    35px
     rgba(
       0,
       0,
@@ -554,6 +726,7 @@ button {
       0.25
     );
 }
+
 
 
 .trex-logo img {
@@ -570,8 +743,9 @@ button {
 
 
 /* ==============================
-   COMMUNITY BADGE
+   BADGE
 ================================ */
+
 
 .community-badge {
 
@@ -608,6 +782,7 @@ button {
    HERO TEXT
 ================================ */
 
+
 .hero h2 {
 
   max-width: 410px;
@@ -621,8 +796,10 @@ button {
 
   line-height: 1.16;
 
-  letter-spacing: -0.8px;
+  letter-spacing:
+    -0.8px;
 }
+
 
 
 .hero h2 span {
@@ -632,6 +809,7 @@ button {
   color:
     var(--blue-light);
 }
+
 
 
 .hero p {
@@ -656,6 +834,7 @@ button {
 /* ==============================
    MAIN BUTTON
 ================================ */
+
 
 .main-button {
 
@@ -686,6 +865,7 @@ button {
 }
 
 
+
 .main-button:active {
 
   transform:
@@ -698,6 +878,7 @@ button {
    COMMUNITY
 ================================ */
 
+
 .community-section {
 
   padding:
@@ -707,19 +888,22 @@ button {
 }
 
 
+
 .section-header {
 
   display: flex;
 
   align-items: flex-end;
 
-  justify-content: space-between;
+  justify-content:
+    space-between;
 
   padding:
     0
     5px
     14px;
 }
+
 
 
 .section-label {
@@ -733,8 +917,10 @@ button {
 
   font-weight: bold;
 
-  letter-spacing: 1.5px;
+  letter-spacing:
+    1.5px;
 }
+
 
 
 .section-header h3 {
@@ -744,6 +930,7 @@ button {
 
   font-size: 18px;
 }
+
 
 
 .room-count {
@@ -760,6 +947,7 @@ button {
    ROOM LIST
 ================================ */
 
+
 .room-list {
 
   display: flex;
@@ -768,6 +956,7 @@ button {
 
   gap: 8px;
 }
+
 
 
 .room-card {
@@ -806,6 +995,7 @@ button {
 }
 
 
+
 .room-card:active {
 
   transform:
@@ -814,6 +1004,7 @@ button {
   background:
     var(--surface-light);
 }
+
 
 
 .room-icon {
@@ -839,6 +1030,7 @@ button {
 }
 
 
+
 .room-icon.blue {
 
   background:
@@ -849,6 +1041,7 @@ button {
       0.14
     );
 }
+
 
 
 .room-content {
@@ -865,6 +1058,7 @@ button {
 }
 
 
+
 .room-content strong {
 
   color:
@@ -872,6 +1066,7 @@ button {
 
   font-size: 14px;
 }
+
 
 
 .room-content span {
@@ -885,8 +1080,10 @@ button {
 
   white-space: nowrap;
 
-  text-overflow: ellipsis;
+  text-overflow:
+    ellipsis;
 }
+
 
 
 .room-arrow {
@@ -902,6 +1099,7 @@ button {
 /* ==============================
    BOTTOM NAVIGATION
 ================================ */
+
 
 .bottom-nav {
 
@@ -951,6 +1149,7 @@ button {
 }
 
 
+
 .nav-button {
 
   min-height:
@@ -982,11 +1181,13 @@ button {
 }
 
 
+
 .nav-button:active {
 
   transform:
     scale(0.94);
 }
+
 
 
 .nav-icon {
@@ -995,10 +1196,12 @@ button {
 }
 
 
+
 .nav-text {
 
   font-size: 10px;
 }
+
 
 
 .nav-button.active {
@@ -1010,20 +1213,21 @@ button {
 
 
 /* ==============================
-   TEXT SELECTION
+   DEVELOPER MODE
 ================================ */
 
-img {
 
-  -webkit-user-drag: none;
+body.developer-mode
+.control-button {
 
-  user-select: none;
-}
-
-
-button {
-
-  user-select: none;
+  box-shadow:
+    0 0 18px
+    rgba(
+      37,
+      136,
+      255,
+      0.08
+    );
 }
 
 
@@ -1032,11 +1236,13 @@ button {
    LARGE SCREEN
 ================================ */
 
+
 @media (min-width: 700px) {
 
   body {
 
-    background: #040609;
+    background:
+      #040609;
   }
 
 
